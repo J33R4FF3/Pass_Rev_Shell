@@ -4,10 +4,15 @@ Pass_Rev_Shell is for use on Linux and will initiate a simple reverse shell back
 
 The desired shell, remote IP Address, port and password can be configured within the arguments array.
 
-For more information on the inner workings of the code, please read the blog [here](https://j33r4ff3.github.io/blog/Creating-TCP-Bind-Shell-with-C_2).
+For more information on the inner workings of the code, please read the blog [here](https://j33r4ff3.github.io/blog/Creating-A-Reverse-Shell-In-C).
 
 ## Compile
 
 ```bash
 gcc Pass_Rev_Shell.c -o Filename
+```
+or
+```bash
+nasm -felf64 Pass_Rev_Shell.nasm -o ObjectFile_Filename.o
+ld ObjectFile_Filename.o -o Executable_Filename
 ```
