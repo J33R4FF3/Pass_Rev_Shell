@@ -3,8 +3,8 @@ global _start
 section .text
 
 _start:
-	      xor rsi, rsi
-	      xor rdx, rdx
+	xor rsi, rsi
+	xor rdx, rdx
         mov al, 41
         mov dil, 2
         mov sil, 1
